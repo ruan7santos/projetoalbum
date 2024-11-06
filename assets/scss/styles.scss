@@ -1,0 +1,111 @@
+// assets/scss/style.scss
+ 
+// Variáveis de cor
+$primary-color: #000000;
+$secondary-color: #ffffff;
+$bg-color: #ffffff;
+$item-bg-color: #ff0000;
+$item-border-color: #030303;
+ 
+// Estilos globais
+* {
+  margin: 3;
+  padding: 1;
+  box-sizing: border-box;
+}
+ 
+body {
+  font-family: Arial, sans-serif;
+  background-color: $bg-color;
+  color: $primary-color;
+}
+ 
+// Container principal
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+ 
+// Header
+.header {
+  background-color: $primary-color;
+  color: #fff;
+  padding: 2rem 0;
+  text-align: center;
+  h1 {
+    margin-bottom: 0.5rem;
+  }
+ 
+  .subtitle {
+    color: $secondary-color;
+  }
+}
+ 
+// Grid de Álbum
+.album-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+ 
+.album-item {
+  background-color: $item-bg-color;
+  border: 1px solid $item-border-color;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 2s;
+ 
+  &:hover {
+    transform: translateY(-5px);
+  }
+ 
+  .album-image {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+ 
+  .album-content {
+    padding: 1rem;
+ 
+    h2 {
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+      color: $primary-color;
+    }
+ 
+    p {
+      color: $secondary-color;
+      font-size: 0.9rem;
+      line-height: 1.4;
+    }
+  }
+}
+ 
+// Rodapé
+.footer {
+  background-color: $primary-color;
+  color: #fff;
+  text-align: center;
+  padding: 1rem 0;
+  margin-top: 2rem;
+}
+ 
+// Responsividade
+@media (max-width: 768px) {
+  .header h1 {
+    font-size: 1.8rem;
+  }
+ 
+  .album-grid {
+    gap: 2rem;
+  }
+ 
+  .album-content h2 {
+    font-size: 1rem;
+  }
+}
